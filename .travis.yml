@@ -3,7 +3,7 @@ language: python
 python:
     - 2.7
 before_intall:
-    - sudo apt-get install -qq python-numpy python-scipy python-matplotlib
+  #- sudo apt-get install -qq python-numpy python-scipy python-matplotlib
 install:
     - pip install nose
     - python setup.py install
