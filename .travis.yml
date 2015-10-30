@@ -1,5 +1,6 @@
 #http://travis-ci.org/#!velvet/velvet
 language: python
+sudo: true
 python:
     - 2.7
 before_intall:
