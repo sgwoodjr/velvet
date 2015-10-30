@@ -10,6 +10,6 @@ Signal Processing
 
 """
 
-from sigproc import *
+from .sigproc import *
 
-from validation import *
+from .validation import *
