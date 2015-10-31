@@ -102,7 +102,7 @@ def setup_package():
         packages=['velvet','velvet.test'],
         license = 'LICENSE',
         description='Beautiful signal processing and communications for Python',
-        long_description=open('README.md').read(),
+        long_description=open('README.rst').read(),
     )
 
 

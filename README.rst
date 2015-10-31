@@ -5,5 +5,7 @@
    :target: https://travis-ci.org/sgwoodjr/velvet
 
 
-# velvet
-"That's beautiful, what is that velvet?"
+Velvet
+======
+
+**That's beautiful, what is that velvet?**
