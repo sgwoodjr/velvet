@@ -1,6 +1,9 @@
-[![Build Status](https://travis-ci.org/sgwoodjr/velvet.svg?branch=master)](https://travis-ci.org/sgwoodjr/velvet)
+.. image:: https://img.shields.io/coveralls/sgwoodjr/velvet.svg
+    :target: https://coveralls.io/github/sgwoodjr/velvet?branch=master
 
-[![Coverage Status](https://coveralls.io/repos/sgwoodjr/velvet/badge.svg?branch=master&service=github)](https://coveralls.io/github/sgwoodjr/velvet?branch=master)
+.. image:: https://travis-ci.org/sgwoodjr/velvet.svg?branch=master
+   :target: https://travis-ci.org/sgwoodjr/velvet
+
 
 # velvet
 "That's beautiful, what is that velvet?"
