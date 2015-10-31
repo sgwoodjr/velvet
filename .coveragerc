@@ -4,4 +4,5 @@ omit = velvet/version.py
 exclude_lines = 
     raise AssertionError
     raise TypeError
+    return unittest.TestLoader
     if __name__ == '__main__':
