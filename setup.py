@@ -14,8 +14,8 @@ import os
 import subprocess
 
 MAJOR = 0
-MINOR = 1
-MICRO = 0
+MINOR = 0
+MICRO = 1
 ISRELEASED = False
 VERSION = '%d.%d.%d' % (MAJOR,MINOR,MICRO)
 
@@ -101,8 +101,25 @@ def setup_package():
         url='https://github.com/sgwoodjr/velvet',
         packages=['velvet','velvet.test'],
         license = 'LICENSE',
-        description='Beautiful signal processing and communications for Python',
+        description='Beautiful signal processing and communications algorithms in Python',
         long_description=open('README.rst').read(),
+        keywords="signal processing, communications, DSP",
+        install_requires=[],
+        setup_requires=[],
+        classifiers=[
+            "Development Status :: 2 - Pre-Alpha",
+            "Intended Audience :: Science/Research",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: Implementation",
+            "Topic :: Software Development",
+            "Topic :: Software Development :: Libraries",
+            "Topic :: Scientific/Engineering",
+            ],
     )
 
 
