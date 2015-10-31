@@ -103,12 +103,6 @@ def setup_package():
         license = 'LICENSE',
         description='Beautiful signal processing and communications for Python',
         long_description=open('README.md').read(),
-        install_requires=[
-            "python >= 2.7",
-            "NumPY >= 1.7",
-            "SciPY >= 0.13",
-            "matplotlib >= 1.3.1",
-        ],
     )
 
 

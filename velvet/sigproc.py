@@ -10,7 +10,7 @@
 #------------------------------------------------------------------------
 
 import numpy as np
-from validation import assert_ndarray, assert_one_dimension
+from .validation import assert_ndarray, assert_one_dimension
 
 fft = np.fft.fft
 ifft = np.fft.ifft

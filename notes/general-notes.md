@@ -15,3 +15,7 @@ General Notes
 * The code should be designed to work with Python 2.7x and 3.x.
 
 * What is the best method of properly using git tags with a PGP key?
+
+## Anaconda
+$ source activate <environment>
+$ source deactivate

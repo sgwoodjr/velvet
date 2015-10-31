@@ -21,7 +21,7 @@ class TestSigProcFunctions(unittest.TestCase):
         yCorrect = np.array([  7.49400542e-16,   1.00000000e+00,   2.50000000e+00,
             4.00000000e+00,   1.50000000e+00])
 
-        for ind in xrange(len(y)):
+        for ind in np.arange(len(y)):
             self.assertAlmostEqual(y[ind],yCorrect[ind])
 
     def test_nextpower2(self):
