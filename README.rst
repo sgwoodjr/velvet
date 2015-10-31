@@ -3,8 +3,52 @@
 Velvet
 ======
 
-**That's beautiful, what is that velvet?**
+*"That's beautiful, what is that velvet?"*
 
+
+Velvet provides signal processing and communications algorithms in
+Python. Typical usage often looks like this::
+
+    #!/usr/bin/env python
+
+    import velvet as vt
+
+Install
+-------
+Requirements/Dependencies
+
+- Python 2.7 or above
+- NumPy 1.7 or above
+- SciPy 0.13 or above
+- Matplotlib 1.3.1 or above
+
+The package is available on
+`PyPI <https://pypi.python.org/pypi/velvet>`__:
+
+::
+
+    $ pip install velvet
+
+To get the latest development work, clone from github and install as follows::
+
+    $ git clone https://github.com/sgwoodjr/velvet.git
+    $ cd velvet
+    $ python setup.py install
+
+Unit testing::
+
+   $ nosetests -v
+
+Run unit tests with a coverage report::
+
+   $ nosetests -v --with-coverage --cover-html --cover-package=velvet
+
+Contribute
+----------
+| Write a bug report or send a pull request.
+| Here is what others have done
+  `contributors <https://github.com/sgwoodjr/velvet/graphs/contributors>`__
+  
 License
 -------
 
