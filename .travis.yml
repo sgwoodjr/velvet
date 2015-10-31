@@ -24,4 +24,6 @@ install:
   - source activate test-environment
   - python setup.py install
 script:
-  - nosetests -v
+  - nosetests -v --with-coverage --cover-package=velvet
+after_success:
+  - coveralls
