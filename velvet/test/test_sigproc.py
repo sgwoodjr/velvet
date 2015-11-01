@@ -42,6 +42,15 @@ class TestSigProcFunctions(unittest.TestCase):
         yCorrect = 10
         self.assertEqual(y,yCorrect)
 
+    def test_upsample(self):
+        x = np.array([1, 2, 3])
+        y = vt.upsample(x, 2)
+
+        yCorrect = np.array([1, 0, 2, 0, 3, 0])
+
+        for ind in np.arange(len(y)):
+            self.assertAlmostEqual(y[ind], yCorrect[ind])
+
 def mysuite():
     return unittest.TestLoader().loadTestsFromTestCase(TestSigProcFunctions)
 

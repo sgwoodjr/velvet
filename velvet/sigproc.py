@@ -16,7 +16,7 @@ fft = np.fft.fft
 ifft = np.fft.ifft
 
 # Public API
-__all__ = ['conv', 'nextpower2']
+__all__ = ['conv', 'nextpower2', 'upsample']
 
 def conv(x, h):
     """ Linear convolution.
@@ -128,3 +128,49 @@ def nextpower2(x):
     temp = np.abs(x)
     v = int(np.ceil(np.log2(temp)))
     return v
+ 
+def upsample(x, N):
+    """Upsample data.
+
+    y = upsample(x, N) upsamples the data in array x by factor N. Upsampling
+    is accomplished by inserting N-1 zeros between each sample of x.
+
+    Parameters
+    -----------
+    x : ndarray
+        Input data
+
+    N : int
+        Upsample value
+
+    Returns
+    --------
+    y : ndarray
+        Upsampled data
+
+    See Also
+    ---------
+    repeat
+
+    Examples
+    ---------
+    >>> import numpy as np
+    >>> import velvet as vt
+    >>> x = np.array([1,2,3])
+    >>> vt.upsample(x, 2)
+    array([ 1,  0,  2,  0,  3,  0])
+   
+    """
+
+    # Input error checking
+    assert_ndarray(x)
+    assert_one_dimension(x)
+
+    y = np.zeros(N * len(x), dtype=x.dtype)
+
+    jj = 0
+    for ii in xrange(len(x)):
+        y[jj] = x[ii]
+        jj += N
+
+    return y
