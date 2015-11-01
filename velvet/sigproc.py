@@ -65,8 +65,6 @@ def conv(x, h):
 
     """
 
-    # TODO: Investigate possible speed improvement for real data by taking rfft
-
     # Input error checking
     assert_ndarray(x)
     assert_ndarray(h)
@@ -90,10 +88,10 @@ def conv(x, h):
     out = temp[0:N]
 
     # Should output be real or complex
-    if all(np.isreal(x)) and all(np.isreal(h)):
-        return np.real(out)
-    else:
+    if x.dtype == 'complex' or h.dtype == 'complex':
         return out
+    else:
+        return np.real(out)
 
 
 def nextpower2(x):
