@@ -7,15 +7,22 @@ General Notes
   - If it is kept private, then the function names should be prepended
     with an underscore.
 
-* Add a setup.py file
-
-* Configure the GitHub repository to interface with travis for automatic
-  builds and testing.
-
-* The code should be designed to work with Python 2.7x and 3.x.
-
 * What is the best method of properly using git tags with a PGP key?
+
+* Establish the documentation approach
 
 ## Anaconda
 $ source activate <environment>
 $ source deactivate
+
+## Submit a PyPI Package
+
+This assumes the ~/.pypirc file is configured.
+
+* Test site
+  $ python setup.py register -r pypitest
+  $ python setup.py sdist upload -r pypitest
+
+* Live site
+  $ python setup.py register -r pypi
+  $ python setup.py sdist upload -r pypi
