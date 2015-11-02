@@ -169,7 +169,7 @@ def upsample(x, N):
     y = np.zeros(N * len(x), dtype=x.dtype)
 
     jj = 0
-    for ii in xrange(len(x)):
+    for ii in np.arange(len(x)):
         y[jj] = x[ii]
         jj += N
 
