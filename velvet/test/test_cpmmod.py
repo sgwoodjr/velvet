@@ -23,7 +23,7 @@ class TestCPM(unittest.TestCase):
         temp = np.arctan2(np.imag(v), np.real(v))
         temp = np.diff(temp)
         yCorrect = np.clip(temp[0::4] > 0, 0, 1)
-        for ind in xrange(len(yCorrect)):
+        for ind in np.arange(len(yCorrect)):
             self.assertAlmostEqual(syms[ind],yCorrect[ind])
 
     def test_reset(self):
@@ -32,7 +32,7 @@ class TestCPM(unittest.TestCase):
         y1 = cpm.mod(2*syms - (4-1))
         cpm.reset()
         y2 = cpm.mod(2*syms - (4-1))
-        for ind in xrange(len(y1)):
+        for ind in np.arange(len(y1)):
             self.assertAlmostEqual(y1[ind],y2[ind])
 
     def test_mod_state(self):
@@ -43,7 +43,7 @@ class TestCPM(unittest.TestCase):
         temp1 = cpm.mod(2*syms[0:50] - (4-1))
         temp2 = cpm.mod(2*syms[50:] - (4-1))
         y2 = np.concatenate((temp1,temp2))
-        for ind in xrange(len(syms)):
+        for ind in np.arange(len(syms)):
             self.assertAlmostEqual(y1[ind],y2[ind])
 
 def mysuite():
