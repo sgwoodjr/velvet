@@ -5,9 +5,9 @@ Velvet
 
 *"That's beautiful, what is that velvet?"*
 
-..note:: This project is still in the planning phase. The foundation of
-the project is still being configured. Once that is complete, actual
-signal processing functionality will be added.
+    .. note:: This project is still in the planning phase. The foundation of
+    the project is still being configured. Once that is complete, actual
+    signal processing functionality will be added.
 
 
 Velvet provides signal processing and communications algorithms in
