@@ -19,7 +19,7 @@ class TestUtilFunctions(unittest.TestCase):
         y = vt.isodd(x)
 
         yCorrect = np.array([1,0,1,1,1,0,1,0,1,0,0,1,1,1,0,1,0])
-        for ind in xrange(len(y)):
+        for ind in np.arange(len(y)):
             self.assertEqual(y[ind],yCorrect[ind])
 
 
