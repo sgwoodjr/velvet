@@ -46,6 +46,22 @@ class TestCPM(unittest.TestCase):
         for ind in np.arange(len(syms)):
             self.assertAlmostEqual(y1[ind],y2[ind])
 
+    def test_max_ValueError(self):
+        # M = 4, so max input must be less than 4.
+        cpm = vt.CPMMod(4, 1.0/2400, 0.75, np.ones(4), 4)
+        self.assertRaises(ValueError, cpm.mod, np.array([-1, 1, 4]))
+
+    def test_min_ValueError(self):
+        # M = 4, so min input must be greater than 4.
+        cpm = vt.CPMMod(4, 1.0/2400, 0.75, np.ones(4), 4)
+        self.assertRaises(ValueError, cpm.mod, np.array([-1, 1, -4]))
+
+    def test_odd_ValueError(self):
+        # M = 4, so input must be {-3, -1, 1, 3}
+        cpm = vt.CPMMod(4, 1.0/2400, 0.75, np.ones(4), 4)
+        self.assertRaises(ValueError, cpm.mod, np.array([-1, 1, 2]))
+
+
 def mysuite():
     return unittest.TestLoader().loadTestsFromTestCase(TestCPM)
 

@@ -13,6 +13,7 @@ import numpy as np
 import scipy.signal
 from .sigproc import upsample
 from .validation import assert_ndarray, assert_one_dimension
+from .utils import isodd
 
 lfilter = scipy.signal.lfilter
 
@@ -144,8 +145,8 @@ class CPMMod(object):
             raise ValueError("input must be less than M") 
         if (min(myx) <= -self._Mary):
             raise ValueError("input must be greater than -M") 
-        #if not all(vt.isodd(myx)):
-        #    raise ValueError("input must be an odd integer")
+        if not all(isodd(myx)):
+            raise ValueError("input must be an odd integer")
 
         # Upsample symbols
         symup = upsample(myx, self._fsT)

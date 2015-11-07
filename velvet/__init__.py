@@ -16,4 +16,5 @@ Signal Processing
 
 from .cpmmod import *
 from .sigproc import *
+from .utils import *
 from .validation import *
