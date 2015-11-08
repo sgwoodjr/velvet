@@ -5,6 +5,9 @@ The following commands are available:
 
   >>> from velvet import *
 
+Communications
+    biterr              - Bit error rate
+
 Modems
     CPMMOD              - Continous phase modulation
 
@@ -14,6 +17,7 @@ Signal Processing
 
 """
 
+from .commfunc import *
 from .cpmmod import *
 from .sigproc import *
 from .utils import *
