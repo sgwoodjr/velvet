@@ -22,6 +22,14 @@ class TestUtilFunctions(unittest.TestCase):
         for ind in np.arange(len(y)):
             self.assertEqual(y[ind],yCorrect[ind])
 
+    def test_scalar_int_ValueError(self):
+        # Input must be an integer
+        self.assertRaises(ValueError, vt.isodd, 3.4);
+
+    def test_ndarray_int_ValueError(self):
+        # Input must be an integer
+        self.assertRaises(ValueError, vt.isodd, np.array([1, 1, 4.0]))
+
 
 def mysuite():
     return unittest.TestLoader().loadTestsFromTestCase(TestUtilFunctions)
