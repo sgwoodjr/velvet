@@ -9,6 +9,7 @@
 # The full License is in the file LICENSE
 #------------------------------------------------------------------------
 
+from __future__ import print_function
 import sys
 import numpy as np
 
@@ -55,7 +56,7 @@ def isodd(x):
 
     return x & 1
 
-class ProgressBar:
+class ProgressBar: 
     """Print a progress bar to the terminal
 
     Code grabbed from an Ipython Notebook example.
@@ -74,7 +75,7 @@ class ProgressBar:
         self.__update_amount(0)
 
     def animate(self, iter):
-        print '\r', self,
+        print('\r', self, end=' ')
         sys.stdout.flush()
         self.update_iteration(iter + 1)
 
