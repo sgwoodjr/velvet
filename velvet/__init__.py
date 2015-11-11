@@ -11,6 +11,9 @@ Communications
 Modems
     CPMMOD              - Continous phase modulation
 
+Pulse Shapes
+    rectpulse           - Rectangular pulse
+
 Signal Processing
     conv                - Convolution
     upsample            - Upsample data
@@ -19,6 +22,7 @@ Signal Processing
 
 from .commfunc import *
 from .cpmmod import *
+from .pulses import *
 from .sigproc import *
 from .utils import *
 from .validation import *
