@@ -28,5 +28,3 @@ before_script:
   - mkdir -p shippable/codecoverage shippable/testresults
 script:
   - nosetests -v --with-coverage --cover-package=velvet --cover-xml --cover-xml-file=shippable/codecoverage/coverage.xml
-after_success:
-  - coveralls
