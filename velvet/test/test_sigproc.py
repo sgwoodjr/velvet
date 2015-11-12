@@ -41,7 +41,7 @@ class TestSigProcFunctions(unittest.TestCase):
         y = vt.fmdetect(x, 2.0)
         yCorrect = np.array([ 0.25,  0.  ,  0.  ,  0.  ,  0.  ,  0.  ,  0.  ,  0.  ,  0.  ])
 
-        for ind in xrange(len(y)):
+        for ind in np.arange(len(y)):
             self.assertAlmostEqual(y[ind],yCorrect[ind])
 
     def test_nextpower2(self):
