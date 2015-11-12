@@ -10,13 +10,13 @@
 #------------------------------------------------------------------------
 
 import numpy as np
-from .validation import assert_ndarray, assert_one_dimension
+from .validation import assert_ndarray, assert_one_dimension, assert_complex
 
 fft = np.fft.fft
 ifft = np.fft.ifft
 
 # Public API
-__all__ = ['conv', 'nextpower2', 'upsample']
+__all__ = ['conv', 'fmdetect', 'nextpower2', 'upsample']
 
 def conv(x, h):
     """ Linear convolution.
@@ -93,6 +93,47 @@ def conv(x, h):
     else:
         return np.real(out)
 
+def fmdetect(x, Fs):
+    """ Instantaneous FM frequency.
+
+    z = fmdetect(x, Fs) returns the instantaneous frequency, in Hz,
+    of the data in array x with sampling frequency Fs Hz.
+
+    Parameters
+    -----------
+    x : ndarray, complex data
+        Input sequence
+
+    Fs : float
+        Sampling frequency, in Hz
+
+    Returns
+    --------
+    z : ndarray
+        Instantaneous frequency, in Hz
+
+    Examples
+    ---------
+    >>> import numpy as np
+    >>> import velvet as vt
+    >>> x = np.arange(10) + 1j*np.arange(10)
+    >>> z = vt.fmdetect(x, 2.0)
+    >>> vt.fmdetect(x, 2.0)
+    array([ 0.25,  0.  ,  0.  ,  0.  ,  0.  ,  0.  ,  0.  ,  0.  ,  0.  ])
+
+    """
+
+    # Input error checking
+    assert_ndarray(x)
+    assert_complex(x)
+    assert_one_dimension(x)
+
+    delta_phase = np.diff(np.unwrap(np.angle(x)))
+
+    # Delta phase radians scaled by Fs/(2 pi) puts the final units of z in Hz.
+    z = Fs / (2 * np.pi) * delta_phase
+
+    return z
 
 def nextpower2(x):
     """ Next power of 2.
