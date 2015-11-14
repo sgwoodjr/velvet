@@ -22,7 +22,7 @@ class TestSigProcFunctions(unittest.TestCase):
         yCorrect = np.array([ 0.33002397+0.34938811j,  1.07486256+0.81716805j,
             2.18310511+2.17774527j,  3.41923273+2.97168366j])
       
-        for ind in xrange(len(y)):
+        for ind in np.arange(len(y)):
             self.assertAlmostEqual(np.real(y[ind]),np.real(yCorrect[ind]))
             self.assertAlmostEqual(np.imag(y[ind]),np.imag(yCorrect[ind]))
 
@@ -32,7 +32,7 @@ class TestSigProcFunctions(unittest.TestCase):
         y = vt.awgn(x,20)
         yCorrect = np.array([ 0.30554283,  1.06930926,  2.16952239,  3.38813409])
       
-        for ind in xrange(len(y)):
+        for ind in np.arange(len(y)):
             self.assertAlmostEqual(y[ind],yCorrect[ind])
 
 def mysuite():
