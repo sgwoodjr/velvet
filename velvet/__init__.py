@@ -5,8 +5,15 @@ The following commands are available:
 
   >>> from velvet import *
 
+Channel Models
+    awgn                - Additive white Gaussian noise channel
+
 Communications
+    berawgn             - Theoretical BER for AWGN
     biterr              - Bit error rate
+
+Math
+    qfunc               - Q-function
 
 Modems
     CPMMOD              - Continous phase modulation
@@ -20,6 +27,7 @@ Signal Processing
 
 """
 
+from .channel import *
 from .commfunc import *
 from .cpmmod import *
 from .pulses import *
